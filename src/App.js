@@ -46,7 +46,15 @@ class App extends Component {
         <div className = "App">
           <h1>Something</h1>
 
-          <input type="button" value={this.state.loggedIn ? 'log out': 'log in'} onClick={this.loginHandle.bind(this)}/>
+          <input
+            type = "button"
+            value = {
+              this.state.loggedIn
+                ? 'logout'
+                : 'login'
+            }
+            onClick={this.loginHandle.bind(this)}
+          />
 
 
           <Route
