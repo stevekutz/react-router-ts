@@ -17,6 +17,15 @@ const User = ({match}) => {
 
 
 class App extends Component {
+  state = {
+    loggedIn: false,
+  };
+
+  loginHandle = () => {
+    this.setState = {loggedIn: true}
+  };
+
+
   render() {
     return (
       <Router>
@@ -24,6 +33,9 @@ class App extends Component {
 
         <div className = "App">
           <h1>Something</h1>
+
+        <input type = "button" value = "log in" onClick = {() => this.loginHandle}/>
+
 
         <Route
           exact strict
