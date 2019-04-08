@@ -3,9 +3,9 @@ import './App.css';
 
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-const User = () => {
+const User = ({match}) => {
   return (
-    <h1> Welcome User</h1>
+    <h1> Welcome User {match.params.username} </h1>
 
   )
 
@@ -32,12 +32,20 @@ class App extends Component {
           path = "/about/"
           render = { () => <h1>Welcome About</h1>}
         />
-
-        <Route
+          {/*
+         <Route
           exact strict
           path = "/user"
           render = { User }
         />
+          */}
+
+        <Route
+          exact strict
+          path = "/user/:username"
+          render = { User }
+        />
+
 
         </div>
       </Router>
