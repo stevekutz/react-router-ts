@@ -1,7 +1,7 @@
 import React, {Component}from 'react';
 import './App.css';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 const User = ({match}) => {
   return (
@@ -10,6 +10,10 @@ const User = ({match}) => {
   )
 
 };
+
+
+// Step 1) Using <Route/>
+// established Routes using path, what to render, and :username for specific paths
 
 
 class App extends Component {
@@ -29,7 +33,7 @@ class App extends Component {
 
         <Route
           exact strict
-          path = "/about/"
+          path = "/about"
           render = { () => <h1>Welcome About</h1>}
         />
           {/*
@@ -47,7 +51,24 @@ class App extends Component {
         />
 
 
+
+
+          {/* Step 2) Add some Links now and specify path with   to = "PATHNAME"*/}
+          {/*  we wrap in a div & use flex for some basic layout */}
+          <div className = "links">
+              <Link to  = "/"> Home </Link>
+              <Link to  = "/about"> About </Link>
+          </div>
+
+
+
+
+
+
+
+
         </div>
+
       </Router>
 
 
