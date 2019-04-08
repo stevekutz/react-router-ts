@@ -11,6 +11,10 @@ const UserTwo = (props) => {
   return (<h2> Welcome UserTwo {props.username}</h2>)
 };
 
+const UserThree = (props) => {
+  return (<h2> Welcome UserTwo {props.username}</h2>)
+};
+
 class App extends Component {
   state = {
     loggedIn:false
