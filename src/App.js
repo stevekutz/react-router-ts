@@ -1,7 +1,7 @@
 import React, {Component}from 'react';
 import './App.css';
 
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, NavLink} from 'react-router-dom';
 
 const User = ({match}) => {
   return (
@@ -56,10 +56,10 @@ class App extends Component {
           {/* Step 2) Add some Links now and specify path with   to = "PATHNAME"*/}
           {/*  we wrap in a div & use flex for some basic layout */}
           <div className = "links">
-              <Link to  = "/"> Home </Link>
-              <Link to  = "/about"> About </Link>
-              <Link to  = "/user/Joe"> Joe </Link>
-              <Link to  = "/user/Beth"> Beth</Link>
+              <NavLink exact to  = "/" activeStyle = { {color: 'deeppink'} }> Home </NavLink>
+              <NavLink exact to  = "/about" activeStyle = { {color: 'deeppink'} } > About </NavLink>
+              <NavLink exact to  = "/user/Joe" activeStyle = { {color: 'deeppink'} } > Joe </NavLink>
+              <NavLink exact to  = "/user/Beth" activeStyle = { {color: 'deeppink'} } > Beth</NavLink>
           </div>
 
 
