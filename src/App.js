@@ -96,7 +96,7 @@ class App extends Component {
           <div className = "links">
               <NavLink exact to  = "/" activeStyle = { {color: 'deeppink'} }> Home </NavLink>
               <NavLink exact to  = "/about" activeStyle = { {color: 'deeppink'} } > About </NavLink>
-              <NavLink exact to  = "/user/Joe" activeStyle = { {color: 'deeppink'} } > Joe </NavLink>
+              <NavLink exact to  = "/user/Joeeee" activeStyle = { {color: 'deeppink'} } > Joe </NavLink>
               <NavLink exact to  = "/user/Beth" activeStyle = { {color: 'deeppink'} } > Beth</NavLink>
           </div>
 
