@@ -1,7 +1,7 @@
 import React, {Component}from 'react';
 import './App.css';
 
-import {BrowserRouter as Router, Route, Link, NavLink, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt} from 'react-router-dom';
 
 const User = (params) => {
   return (
@@ -54,6 +54,13 @@ class App extends Component {
                 : 'login'
             }
             onClick={ () => this.loginHandle()}
+          />
+
+          <Prompt
+            when={!this.state.loggedIn}
+            message={(location)=>{
+              return location.pathname.startsWith('/user') ? 'Are you sure?' : true
+            }}
           />
 
 
