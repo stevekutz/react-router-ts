@@ -1,11 +1,11 @@
 import React, {Component}from 'react';
 import './App.css';
 
-import {BrowserRouter as Router, Route, Link, NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, NavLink, Redirect} from 'react-router-dom';
 
-const User = ({match}) => {
+const User = (params) => {
   return (
-    <h1> Welcome User {match.params.username} </h1>
+    <h1> Welcome User {params.username} </h1>
 
   )
 
@@ -18,12 +18,24 @@ const User = ({match}) => {
 
 class App extends Component {
   state = {
-    loggedIn: false,
+    loggedIn:false
   };
-
   loginHandle = () => {
-    this.setState = {loggedIn: true}
+    this.setState(prevState => ({
+      loggedIn: !prevState.loggedIn
+    }))
   };
+/*
+        <input
+          type = "button"
+          value = {
+            this.state.loggedIn
+            ? 'logout'
+            : 'login'
+          }
+          onClick={this.loginHandle.bind(this)}
+        />
+*/
 
 
   render() {
@@ -34,10 +46,10 @@ class App extends Component {
         <div className = "App">
           <h1>Something</h1>
 
-        <input type = "button" value = "log in" onClick = {() => this.loginHandle}/>
+          <input type="button" value={this.state.loggedIn ? 'log out': 'log in'} onClick={this.loginHandle.bind(this)}/>
 
 
-        <Route
+          <Route
           exact strict
           path = "/"
           render = { () => <h1>Welcome Home</h1>}
@@ -59,7 +71,13 @@ class App extends Component {
         <Route
           exact strict
           path = "/user/:username"
-          render = { User }
+          render = {  ({match}) => (
+            this.state.loggedIn
+              ? (<User username = {match.params.username}/>)
+              : (<Redirect  to = "/" />)
+
+          )
+             }
         />
 
 
