@@ -53,7 +53,7 @@ class App extends Component {
                 ? 'logout'
                 : 'login'
             }
-            onClick={this.loginHandle.bind(this)}
+            onClick={ () => this.loginHandle()}
           />
 
 
@@ -79,7 +79,7 @@ class App extends Component {
         <Route
           exact strict
           path = "/user/:username"
-          render = {  ({match}) => (
+          render = {  ({match}) => (    //    (match) will not work
             this.state.loggedIn
               ? (<User username = {match.params.username}/>)
               : (<Redirect  to = "/" />)
