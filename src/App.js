@@ -58,6 +58,8 @@ class App extends Component {
           <div className = "links">
               <Link to  = "/"> Home </Link>
               <Link to  = "/about"> About </Link>
+              <Link to  = "/user/Joe"> Joe </Link>
+              <Link to  = "/user/Beth"> Beth</Link>
           </div>
 
 
